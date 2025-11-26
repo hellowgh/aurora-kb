@@ -1,3 +1,16 @@
 spring:
   application:
     name: AuroraKB
+
+langchain:
+  qianwen:
+    api-key: ${QWEN_API_KEY}  # 从环境变量读取
+    model: qwen-max
+
+qdrant:
+  host: localhost
+  port: 6333
+  collection-name: aurora_kb_default
+
+server:
+  port: 8080
