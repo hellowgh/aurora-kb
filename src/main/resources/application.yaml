@@ -1,16 +1,18 @@
 spring:
-  application:
-    name: AuroraKB
+  redis:
+    host: localhost
+    port: 6379
 
-langchain:
-  qianwen:
-    api-key: ${QWEN_API_KEY}  # 从环境变量读取
-    model: qwen-max
-
+langchain4j:
+  openai:
+    apiKey: ${DEEPSEEK_API_KEY}}
+    baseUrl: https://api.deepseek.com
+    model: deepseek-chat
 qdrant:
-  host: localhost
-  port: 6333
-  collection-name: aurora_kb_default
-
-server:
-  port: 8080
+  url: http://localhost:6333
+  apiKey: ${QDRANT_API_KEY:}
+app:
+  rag:
+    topK: 6
+    chunkSize: 1000
+    chunkOverlap: 200
